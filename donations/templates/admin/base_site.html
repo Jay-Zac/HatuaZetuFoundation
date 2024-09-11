@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script>
+    // Set your session duration and warning time
+    const sessionDuration = {{ SESSION_COOKIE_AGE }};
+    const warningTime = 30000; // 30 seconds in milliseconds
+
+    // Calculate when the warning and logout should happen
+    const warningTimeMs = sessionDuration - warningTime;
+
+    // Function to display a warning
+    function showWarning() {
+        alert('You will be logged out due to inactivity in 30 seconds.');
+    }
+
+    // Function to display a logout message
+    function showLogoutMessage() {
+        alert('You have been logged out due to inactivity.');
+        // Redirect to the login page or another appropriate page
+        window.location.href = "{% url 'admin:login' %}";
+    }
+
+    // Set timeouts
+    setTimeout(showWarning, warningTimeMs);
+    setTimeout(showLogoutMessage, sessionDuration);
+</script>
+{% endblock %}

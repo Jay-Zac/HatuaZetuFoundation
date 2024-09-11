@@ -1,0 +1,81 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}Contact Us{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Contact Form Section -->
+<div class="section contact-form">
+    <div class="container">
+        <h1>Leave us a message</h1>
+        <form id="form" class="contact-message-form">
+            {% csrf_token %}
+            <!-- Input for First Name -->
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required placeholder="Your First Name">
+            </div>
+            <!-- Input for Last Name -->
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required placeholder="Your Last Name">
+            </div>
+            <!-- Input for Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email Address">
+            </div>
+            <!-- Textarea for Message -->
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Your Message (Optional)"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- Contact Information Section -->
+<div class="section contact-info">
+    <div class="container">
+        <h2>Our Contact Information</h2>
+        <p><strong>Address:</strong> Kikuyu Road, Nairobi, Kenya</p>
+        <p><strong>Phone:</strong> +254 115 764 268</p>
+        <p><strong>Email:</strong> hatuazetufoundationhtz@gmail.com</p>
+    </div>
+</div>
+
+<!-- Map Embed Section -->
+<div class="section map">
+    <div class="container">
+        <h2>Our Location</h2>
+        <div class="map-embed">
+            <!-- Google Maps Embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.26384880821!2d36.704507902433654!3d-1.2843447768381255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1be140145f01%3A0x202e42abd3c86b7a!2sWaithaka%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1725467469636!5m2!1sen!2ske"
+                    width="100%" height="350" style="border:0;" frameborder="0" allowfullscreen="" aria-hidden="false"
+                    tabindex="0" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Social Media Links Section -->
+<div class="section social-media">
+    <div class="container">
+        <h2>Follow Us</h2>
+        <div class="social-icons">
+            <!-- Social Media Links -->
+            <a href="https://x.com/Hatuazetuf?t=tOLAuCM2zJ7akOGgk0-j0Q&s=03" target="_blank" class="social-icon x">X</a>
+            <a href="https://www.instagram.com/hatuazetu_foundation?igsh=OTVocDQ5ZnZ1eGt6" target="_blank"
+               class="social-icon instagram">Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61551102310651" target="_blank"
+               class="social-icon facebook">Facebook
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Include JavaScript for contact form functionality -->
+<script src="{% static 'js/contact_us.js' %}"></script>
+{% endblock %}

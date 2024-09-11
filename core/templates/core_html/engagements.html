@@ -1,0 +1,74 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}Strategic Engagements{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Section showcasing the organization's strategic engagements -->
+<section class="strategic-engagements">
+    <h1>Our Strategic Engagements</h1>
+
+    <!-- Article describing the Wezesha Program -->
+    <article class="engagement">
+        <img src="{% static 'images/education.jpg' %}"
+             alt="Wezesha Program - Inclusive Education for Autistic Children" class="engagement-image">
+        <h2>Wezesha Program - Inclusive Education for Autistic Children</h2>
+        <p>This program is a comprehensive initiative designed to empower and support autistic young people in multiple
+            facets of their lives. It encompasses a holistic approach, combining educational programs tailored to their
+            specific needs, a well-balanced feeding program to ensure their nutritional well-being, robust measures to
+            protect them from violence and exploitation, and comprehensive sexual health and rights education to promote
+            their autonomy and safety.</p>
+        <p>Additionally, it provides essential guidance and resources to parents, helping them improve their livelihoods
+            and become better advocates for their children. Moreover, this program aims to transform societal
+            perceptions and attitudes towards children with disabilities, fostering inclusion and understanding within
+            communities, ultimately creating a more inclusive and accepting environment for these exceptional young
+            individuals. Our goal is to create an environment where every child can learn and grow.</p>
+    </article>
+
+    <!-- Article describing the Hatua Zetu Program -->
+    <article class="engagement">
+        <img src="{% static 'images/advocacy.png' %}" alt="Hatua Zetu Program - Campaign and Policy Advocacy"
+             class="engagement-image">
+        <h2>Hatua Zetu Program - Campaign and Policy Advocacy</h2>
+        <p>The program aims at amplifying the voices of young women and girls in all diversities in policy through
+            campaign and policy advocacy. We encourage young women's and girls’ participation in decision-making spaces
+            and create space for their participation at local and national levels.</p>
+        <p>Our primary objectives include advocating for policies related to Sexual and Reproductive Health and Rights
+            (SRHR) and combating violence against women, with a specific focus on ending Female Genital Mutilation
+            (FGM). This initiative actively promotes the involvement of young women and girls in decision-making
+            processes, ensuring they have a meaningful role at both local and national levels. By doing so, the program
+            seeks to foster inclusivity, gender equality, and a safer environment for women and girls while advancing
+            critical policy changes in the realm of SRHR and gender-based violence prevention.</p>
+    </article>
+
+    <!-- Article describing the Udada na Sanaa Program -->
+    <article class="engagement">
+        <img src="{% static 'images/udada.png' %}"
+             alt="Udada na Sanaa Program - Community Education and Awareness Creation" class="engagement-image">
+        <h2>Udada na Sanaa Program - Community Education and Awareness Creation</h2>
+        <p>We create a safe and inclusive space for all our members to share their stories, experiences, and ideas.
+            Through our efforts, we continue to create a strong network and supportive environment for us all to grow,
+            change, and create long-lasting positive impacts on our community through art.</p>
+        <p>This program harnesses the power of art as a transformative tool to educate the public and challenge
+            oppressive notions and systems that undermine women and girls. Through a blend of visual, performing, and
+            digital arts, this initiative aims to spark critical conversations about gender equality, empowering women,
+            and dismantling harmful stereotypes.</p>
+        <p>We not only showcase the resilience and achievements of women and girls but also expose the deep-seated
+            biases and injustices they face. By engaging diverse audiences through artistic expression, this program
+            seeks to inspire empathy, awareness, and activism, ultimately fostering a society where gender equality is
+            not just a dream but a lived reality.</p>
+    </article>
+
+    <!-- Article describing the Climate Justice Program -->
+    <article class="engagement">
+        <img src="{% static 'images/climate_justice.png' %}" alt="Climate Justice Program" class="engagement-image">
+        <h2>Climate Justice Program</h2>
+        <p>This program is dedicated to elevating the voices of women and girls in our communities who bear the heaviest
+            burdens of climate change impacts, yet have made the smallest contributions to the climate crisis.
+            Specifically, we create spaces for educating communities on the most effective solutions that begin with
+            safeguarding their land, waterways, and other vital natural resources.</p>
+        <p>We nurture creators and advocates on innovative climate solutions, including protecting and disseminating
+            indigenous wisdom and policy advocacy.</p>
+    </article>
+</section>
+
+{% endblock %}

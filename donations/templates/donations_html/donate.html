@@ -1,0 +1,47 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}Donate{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="donate-container">
+    <!-- Title of the donation page -->
+    <h1>Make a Donation</h1>
+
+    <!-- Donation form -->
+    <form method="post" action="{% url 'donations:donate' %}">
+        <!-- CSRF token for security -->
+        {% csrf_token %}
+
+        <!-- Form group for full name -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <!-- Input field for user to enter their full name -->
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <!-- Form group for email address -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <!-- Input field for user to enter their email address -->
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <!-- Form group for donation amount -->
+        <div class="form-group">
+            <label for="amount">Donation Amount</label>
+            <!-- Input field for user to enter the donation amount -->
+            <input type="number" id="amount" name="amount" placeholder="Amount (in USD)" required min="1">
+        </div>
+
+        <!-- Form group for optional message -->
+        <div class="form-group">
+            <label for="message">Message</label>
+            <!-- Textarea for user to enter an optional message -->
+            <textarea id="message" name="message" rows="4" placeholder="Your message (optional)"></textarea>
+        </div>
+
+        <!-- Submit button for the form -->
+        <button type="submit" class="donate-btn">Donate with PayPal</button>
+    </form>
+</div>
+{% endblock %}

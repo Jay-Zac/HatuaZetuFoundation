@@ -1,0 +1,76 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}Welcome{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section with Slider -->
+<div class="hero-section">
+    <div class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url({% static 'images/hero_banner.png' %});">
+            <div class="hero-content">
+                <h1>Welcome to Hatua Zetu Foundation</h1>
+                <p>Empowering communities through sustainable development and education.</p>
+                <a href="{% url 'donations:donate' %}" class="btn btn-primary">Donate Now</a>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url({% static 'images/hero_banner1.png' %});">
+            <div class="hero-content">
+                <h1>Join Our Mission</h1>
+                <p>Help us provide quality education to those in need.</p>
+                <a href="{% url 'donations:donate' %}" class="btn btn-primary">Support Us</a>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url({% static 'images/hero_banner2.png' %});">
+            <div class="hero-content">
+                <h1>Make a Difference Today</h1>
+                <p>Your contribution creates meaningful change.</p>
+                <a href="{% url 'donations:donate' %}" class="btn btn-primary">Get Involved</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section for displaying recent projects -->
+<div class="section main-single">
+    <div class="container">
+        <h2>Our Recent Projects</h2>
+        <div class="main-single-grid">
+            <!-- Check if there are recent projects to display -->
+            {% if recent_projects %}
+            <!-- Loop through each recent project -->
+            {% for recent_project in recent_projects %}
+            <div class="main-single-card">
+                <!-- Display the project's image -->
+                <img src="{{ recent_project.image.url }}" alt="Project Image">
+                <!-- Display the project's title -->
+                <h3>{{ recent_project.title }}</h3>
+                <!-- Display a brief description of the project -->
+                <p>{{ recent_project.content }}</p>
+                <!-- Link to the project's detail page -->
+                <a href="{% url 'core:project_detail' recent_project.id %}" class="btn-link">Read More</a>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Section for more projects -->
+<div class="section more-projects">
+    <a href="{% url 'core:more_projects' %}" class="btn btn-secondary">More Projects</a>
+</div>
+
+<!-- Call-to-action Section -->
+<div class="section call-to-action">
+    <div class="container">
+        <h2>Join Us in Making a Difference</h2>
+        <p>Your support helps us reach more people and make a greater impact in our communities.</p>
+        <a href="{% url 'core:contact' %}" class="btn btn-secondary">Contact Us</a>
+    </div>
+</div>
+
+{% endblock %}

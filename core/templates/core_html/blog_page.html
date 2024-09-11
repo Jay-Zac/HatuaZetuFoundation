@@ -1,0 +1,30 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}Blogs{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Blog Listing Section -->
+<div class="section main-single">
+    <div class="container">
+        <h1>All Blogs</h1>
+        <div class="main-single-grid">
+            {% if blogs %}
+            <!-- Loop through each blog post -->
+            {% for blog in blogs %}
+            <div class="main-single-card">
+                <!-- Blog Image -->
+                <img src="{{ blog.image.url }}" alt="Blog Image">
+                <!-- Blog Title -->
+                <h3>{{ blog.title }}</h3>
+                <!-- Blog Content Preview -->
+                <p>{{ blog.content }}</p>
+                <!-- Link to the full blog post -->
+                <a href="{% url 'core:blog_detail' blog.id %}" class="btn-link">Read More</a>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

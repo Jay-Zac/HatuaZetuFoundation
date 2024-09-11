@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment Variables
+.env
+
+# Virtual Environments
+.venv/
+venv/
+
+# Media Files
+media/
+
+# Django specific
+*.log
+
+# IDEs and Editors
+.idea/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+
+# Migrations
+*/migrations/*.py
+!*/migrations/__init__.py

@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set the character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Set the viewport to make the website responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage with a dynamic block to allow different titles for different pages -->
+    <title>{% block title %}{% endblock %} | Hatua Zetu Foundation</title>
+    <!-- Link to a CSS reset for consistency across browsers -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <!-- Link to favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/hzf_logo.png' %}" type="image/x-icon">
+    <!-- Link to main stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+<!-- Loader -->
+<div class="loader">
+    <div class="loader-spinner"></div>
+</div>
+
+<!-- Cookies Consent Banner -->
+<div class="cookies-consent" id="cookies-consent">
+    <p>We use cookies to improve your experience. Do you accept our cookie policy?</p>
+    <button id="accept-cookies">Accept</button>
+    <button id="reject-cookies" class="reject-btn">Reject</button>
+</div>
+
+<!-- Include the navigation bar from a separate template -->
+{% include 'global_templates/navbar.html' %}
+
+<!-- Check if there are any messages -->
+{% if messages %}
+<!-- Container for holding all messages -->
+<div class="messages-container">
+    <!-- Loop through each message -->
+    {% for message in messages %}
+    <!-- Individual message box -->
+    <div class="message {{ message.tags }}">
+        <!-- Container for the message content -->
+        <span class="message-content">
+            {% block message %}
+            <!-- Display the message content -->
+            {{ message }}
+            {% endblock %}
+        </span>
+        <!-- Button to close the message manually -->
+        <button class="message-close-btn" aria-label="Close">&times;</button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+</button>
+
+<!-- Main Content Area -->
+<main class="content">
+    <div class="container">
+        {% block content %}
+        <!-- Dynamic content will be inserted here -->
+        {% endblock %}
+    </div>
+</main>
+
+<!-- Include the footer from a separate template -->
+{% include 'global_templates/footer.html' %}
+
+<!-- Link to the main JavaScript file for site-wide functionality -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

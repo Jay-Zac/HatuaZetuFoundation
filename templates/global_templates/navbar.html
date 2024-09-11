@@ -1,0 +1,44 @@
+<!-- Load static files tag -->
+{% load static %}
+
+<!-- Header section -->
+<header class="navbar-header">
+    <!-- Navigation bar -->
+    <nav>
+        <!-- Logo section -->
+        <div class="logo">
+            <!-- Company logo image -->
+            <img src="{% static 'assets/hzf_logo.png' %}" alt="Hatua Zetu Foundation Logo" class="logo-image">
+            <!-- Company name/logo text, linked to homepage -->
+            <a id="logo-text" href="{% url 'core:home' %}">
+                <span class="logo-text">Hatua Zetu Foundation</span>
+            </a>
+        </div>
+
+        <!-- Navigation links -->
+        <ul class="nav-links">
+            <!-- Link to the homepage -->
+            <li><a href="{% url 'core:home' %}">Home</a></li>
+            <!-- Link to the "About Us" page -->
+            <li><a href="{% url 'core:about' %}">About Us</a></li>
+            <!-- Link to the "Strategic Engagements" page -->
+            <li><a href="{% url 'core:strategic_engagements' %}">Engagements</a></li>
+            <!-- Link to the "Contact" page -->
+            <li><a href="{% url 'core:contact' %}">Contact</a></li>
+            <!-- Link to the "Blogs" page -->
+            <li><a href="{% url 'core:all_blogs' %}">Blogs</a></li>
+            <!-- Link to the "Donate" page with button styling -->
+            <li><a href="{% url 'donations:donate' %}" class="btn-donate">Donate</a></li>
+        </ul>
+
+        <!-- Burger menu for mobile view -->
+        <div class="burger">
+            <!-- Line 1 of the burger menu -->
+            <div class="line1"></div>
+            <!-- Line 2 of the burger menu -->
+            <div class="line2"></div>
+            <!-- Line 3 of the burger menu -->
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>

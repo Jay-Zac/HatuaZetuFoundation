@@ -1,0 +1,29 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}{{ blog.title }}{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Blog Detail Section -->
+<div class="main-detail-section">
+    <div class="main-detail-container">
+        <div class="main-detail-grid">
+            <!-- Check availability of Blog -->
+            {% if blog %}
+            <div class="main-detail-card">
+                <!-- Blog Image -->
+                <img src="{{ blog.image.url }}" alt="Blog Image">
+                <!-- Blog Title -->
+                <h3>{{ blog.title }}</h3>
+                <!-- Blog Content -->
+                <p>{{ blog.content }}</p>
+                <!-- Optional External Reference -->
+                {% if blog.external_reference %}
+                <a href="{{ blog.external_reference }}">External Reference</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

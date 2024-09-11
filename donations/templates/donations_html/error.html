@@ -1,0 +1,27 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}Payment Error{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Main container for the payment error message -->
+<div class="main-donations-container">
+    <!-- Heading that indicates a payment error occurred -->
+    <h2>Payment Error</h2>
+
+    <!-- Paragraph explaining the error and suggesting a retry -->
+    <p>We encountered an error while processing your payment. Please try again later.</p>
+
+    <!-- Paragraph offering contact information for assistance -->
+    <p>If you continue to experience issues, please
+        <!-- Link to the contact page for further assistance -->
+        <a class="main-donations-container-a" href="{% url 'core:contact' %}">contact us</a>. for assistance.
+    </p>
+
+    <!-- Button to retry the donation process -->
+    <div><a href="{% url 'donations:donate' %}" class="btn btn-primary">Try Again</a></div>
+
+    <!-- Button to return to the homepage -->
+    <div><a href="{% url 'core:home' %}" class="btn btn-secondary">Return to Home</a></div>
+</div>
+
+{% endblock %}

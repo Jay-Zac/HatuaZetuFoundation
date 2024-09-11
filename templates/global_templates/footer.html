@@ -1,0 +1,36 @@
+{% load static %}
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <!-- Container for footer content -->
+        <div class="footer-columns">
+            <!-- Quick Links Section -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <!-- Navigation links to various pages of the website -->
+                    <li><a href="{% url 'core:home' %}">Home</a></li>
+                    <li><a href="{% url 'core:about' %}">About Us</a></li>
+                    <li><a href="{% url 'core:strategic_engagements' %}">Engagements</a></li>
+                    <li><a href="{% url 'core:contact' %}">Contact</a></li>
+                    <li><a href="{% url 'donations:donate' %}">Donate</a></li>
+                </ul>
+            </div>
+            <!-- Contact Information Section -->
+            <div class="footer-contact">
+                <h4>Reach Us</h4>
+                <p>Email: hatuazetufoundationhtz@gmail.com</p>
+                <p>Phone: +254 115 764 268</p>
+                <p>Address: Kikuyu Road, Nairobi, Kenya</p>
+            </div>
+        </div>
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <!-- Dynamic year to update automatically -->
+            <p>&copy; <span id="year"></span> Hatua Zetu Foundation. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Link to JavaScript file for footer functionality -->
+<script src="{% static 'js/footer.js' %}"></script>

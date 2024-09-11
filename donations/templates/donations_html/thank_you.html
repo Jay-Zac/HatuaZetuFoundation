@@ -1,0 +1,24 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}Thank You{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Main container for the thank-you message -->
+<div class="main-donations-container">
+    <!-- Heading that thanks the user for their donation -->
+    <h2>Thank You for Your Donation!</h2>
+
+    <!-- Paragraph expressing gratitude for the contribution -->
+    <p>Your generous contribution is greatly appreciated. Your donation will go a long way in supporting our cause.</p>
+
+    <!-- Paragraph offering contact information for any questions -->
+    <p>If you have any questions, please feel free to
+        <!-- Link to the contact page for further assistance -->
+        <a class="main-donations-container-a" href="{% url 'core:contact' %}">contact us</a>.
+    </p>
+
+    <!-- Button linking back to the homepage -->
+    <a href="{% url 'core:home' %}" class="btn btn-secondary">Return to Home</a>
+</div>
+
+{% endblock %}

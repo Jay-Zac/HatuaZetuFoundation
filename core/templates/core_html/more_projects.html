@@ -1,0 +1,31 @@
+{% extends 'global_templates/base.html' %}
+{% block title %}More Projects{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Section for displaying more projects -->
+<div class="section main-single">
+    <div class="container">
+        <h1>More Projects</h1>
+        <div class="main-single-grid">
+            <!-- Check if there are projects to display -->
+            {% if more_projects %}
+            {% for project in more_projects %}
+            <!-- Card for each project -->
+            <div class="main-single-card">
+                <!-- Display the project's image -->
+                <img src="{{ project.image.url }}" alt="Project Image">
+                <!-- Display the project's title -->
+                <h3>{{ project.title }}</h3>
+                <!-- Display the project's content or description -->
+                <p>{{ project.content }}</p>
+                <!-- Link to the project's detail page -->
+                <a href="{% url 'core:project_detail' project.id %}" class="btn-link">Read More</a>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
