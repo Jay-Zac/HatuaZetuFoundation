@@ -7,6 +7,20 @@
     <meta charset="UTF-8">
     <!-- Set the viewport to make the website responsive on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    !-- Meta description for SEO, with a block for dynamic content -->
+    <meta name="description"
+          content="{% block meta_description %}Discover Hatua Zetu Foundation, a feminist-led organization committed
+          to promoting social justice, equity, and rights for young women, girls, and people with autism. Founded in
+          2020, we empower communities through advocacy, creativity, and collective action to challenge oppressive
+          structures and build a more inclusive, safe, and equitable society.{% endblock %}"
+    >
+    <!-- SEO-related meta tags for keywords and author -->
+    <meta name="keywords" content="Hatua Zetu Foundation, HZF, feminist-led organization, social justice, equity,
+        women's rights, girls' rights, autism advocacy, inclusive community, advocacy, creativity, ending violence
+        against women, young feminists, marginalized groups, human rights, empowerment"
+    >
+
+    <meta name="author" content="Hatua Zetu Foundation">
     <!-- Title of the webpage with a dynamic block to allow different titles for different pages -->
     <title>{% block title %}{% endblock %} | Hatua Zetu Foundation</title>
     <!-- Link to a CSS reset for consistency across browsers -->
