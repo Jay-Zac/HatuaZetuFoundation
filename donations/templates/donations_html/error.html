@@ -11,6 +11,17 @@
     <!-- Paragraph explaining the error and suggesting a retry -->
     <p>We encountered an error while processing your payment. Please try again later.</p>
 
+    <!-- Check if there are any errors to display -->
+    {% if error %}
+    <!-- Loop through each error in the error list/array -->
+    {% for single_error in error %}
+    <!-- Display the current error message in a paragraph tag -->
+    <p>{{single_error}}</p>
+    <!-- End of the error loop -->
+    {% endfor %}
+    <!-- End of the error check condition -->
+    {% endif %}
+
     <!-- Paragraph offering contact information for assistance -->
     <p>If you continue to experience issues, please
         <!-- Link to the contact page for further assistance -->

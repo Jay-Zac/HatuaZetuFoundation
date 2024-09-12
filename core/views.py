@@ -17,7 +17,7 @@ def home_page_view(request):
         context = {'recent_projects': []}
     except Exception as e:
         # Handle any other unexpected errors
-        messages.error(request, f"An unexpected error occurred: {e}")
+        messages.error(request, f"An unexpected error occurred: {str(e)}")
         context = {'recent_projects': []}
 
     return render(request, 'core_html/homepage.html', context)
@@ -29,7 +29,7 @@ def engagements_view(request):
         return render(request, 'core_html/engagements.html')
     except Exception as e:
         # Handle errors during page rendering
-        messages.error(request, f"Error loading engagements page: {e}")
+        messages.error(request, f"Error loading engagements page: {str(e)}")
         return render(request, 'core_html/engagements.html')
 
 
@@ -39,7 +39,7 @@ def about_us_view(request):
         return render(request, 'core_html/about_us.html')
     except Exception as e:
         # Handle errors during page rendering
-        messages.error(request, f"Error accessing About Us page: {e}")
+        messages.error(request, f"Error accessing About Us page: {str(e)}")
         return render(request, 'core_html/about_us.html')
 
 
@@ -68,7 +68,7 @@ def contact_us_view(request):
 
             except Exception as e:
                 # Handle errors while saving the message
-                messages.error(request, f"An error occurred while saving your message: {e}")
+                messages.error(request, f"An error occurred while saving your message: {str(e)}")
         # Form validation errors
         messages.error(request, "Invalid form data. Please correct the errors below.")
 
@@ -94,7 +94,7 @@ def project_detail_view(request, pk):
         context = {'project': None}
     except Exception as e:
         # Handle any other unexpected errors
-        messages.error(request, f"Error retrieving project: {e}")
+        messages.error(request, f"Error retrieving project: {str(e)}")
         context = {'project': None}
 
     return render(request, 'core_html/project_detail.html', context)
@@ -112,7 +112,7 @@ def all_blogs_view(request):
         context = {'blogs': []}
     except Exception as e:
         # Handle any other unexpected errors
-        messages.error(request, f"An unexpected error occurred: {e}")
+        messages.error(request, f"An unexpected error occurred: {str(e)}")
         context = {'blogs': []}
 
     return render(request, 'core_html/blog_page.html', context)
@@ -130,7 +130,7 @@ def blog_detail_view(request, pk):
         context = {'blog': None}
     except Exception as e:
         # Handle any other unexpected errors
-        messages.error(request, f"Error retrieving blog: {e}")
+        messages.error(request, f"Error retrieving blog: {str(e)}")
         context = {'blog': None}
 
     return render(request, 'core_html/blog_detail.html', context)
