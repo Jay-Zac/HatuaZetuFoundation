@@ -233,7 +233,6 @@ header.scrolled {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 62px; /* Accounts for fixed header height */
 }
 
 .hero-slider {
@@ -289,13 +288,13 @@ header.scrolled {
 /* Responsive adjustments for hero section */
 @media (max-width: 768px) {
     .hero-section {
-        margin-top: 45px; /* Adjusts for smaller header on smaller screens */
+        margin-top: -10px; /* Adjusts for smaller header on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .hero-section {
-        margin-top: 30px; /* Further adjustment for smaller screens */
+        margin-top: -10px; /* Further adjustment for smaller screens */
     }
 }
 
@@ -834,6 +833,14 @@ button[type="submit"]:hover {
     }
 }
 
+/* Responsive Styles for medium screens and above */
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 350px; /* Maximum width */
+        margin: 0 auto;
+    }
+}
+
 /* For very small mobile devices (up to 480px wide) */
 @media (max-width: 480px) {
     .section.contact-info {
@@ -855,6 +862,11 @@ button[type="submit"]:hover {
         font-size: 0.8rem; /* Adjust font size */
         width: 100%; /* Full width */
         margin: 0.3rem 0; /* Vertical margin */
+    }
+
+    .contact-form {
+        max-width: 330px; /* Maximum width */
+        margin: 0 auto;
     }
 }
 
